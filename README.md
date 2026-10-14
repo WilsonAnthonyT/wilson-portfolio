@@ -1,82 +1,177 @@
-# Wilson Antony Thang — Portfolio V3
+# Wilson Antony Thang | Interactive Developer Portfolio
 
-An interactive portfolio for software engineering, applied AI, mobile, and embedded systems, using a restrained Neo-Tokyo-inspired dark aesthetic and Traditional Chinese section accents.
+**Software Engineering · AI Engineering · Mobile Development · Systems**
 
-## What is in this package?
+An interactive personal portfolio showcasing my software engineering projects, technical interests, and development experience.
 
-- **`src/`** — Next.js App Router / React / TypeScript production source.
-- **`public/assets/`** — self-contained, original illustrative SVG art (not screenshots from the repositories).
-- **`preview/`** — a standalone HTML/CSS/JavaScript approximation with functional interaction demos. It does not require npm; open `preview/index.html` in a browser. The preview and Next implementation are separate, so some detailed case-study prose differs; `src/` is the authoritative source.
-- **`tools/`** — scripts generating the SVG art and standalone preview, plus offline browser interaction tests.
-- **`Wilson_Antony_Thang_Resume_Public.pdf`** in `public/` and `preview/` — a public copy of the supplied résumé with the phone number redacted. Your supplied original is not distributed in this project.
-- **`desktop-first-screen.png`** / **`mobile-first-screen.png`** and longer screenshots — inspected standalone preview renders.
+Built with **Next.js, React, and TypeScript**, featuring a modern interface inspired by futuristic city aesthetics, meaningful interactive experiences, and dedicated engineering case studies.
 
-## Install and run the real Next.js website
+### 🌐 [Visit My Live Portfolio](https://wilson-portfolio-bvw.pages.dev/)
 
-Prerequisites: Node.js 20+ and npm with an internet connection for installing dependencies.
+---
+
+## About
+
+I'm **Wilson Antony Thang (唐昌偉)**, an Electrical Engineering and Computer Science undergraduate at **National Tsing Hua University (NTHU)** in Taiwan.
+
+My interests span AI engineering, mobile applications, software architecture, and low-level systems.
+
+I enjoy building software that goes beyond basic functionality, with an emphasis on maintainability, reliability, thoughtful design, and user experience.
+
+This portfolio is both a showcase of my work and a personal frontend engineering project.
+
+## Featured Projects
+
+### 🌱 Goal Digger — Agentic AI Productivity Companion
+
+**Flutter · Dart · Firebase · Gemini · Genkit**
+
+A team-developed productivity application designed to transform high-level goals into structured activities and actionable schedules.
+
+Key engineering areas include AI-assisted goal planning, adaptive scheduling, cloud integration, and productivity tools.
+
+[Explore Repository](https://github.com/WilsonAnthonyT/Goal-Digger-App)
+
+### 🎮 Invasion Requiem — 2D Pixel RPG
+
+**C++ · Object-Oriented Programming · Game Systems**
+
+A team-developed 2D game featuring multiple gameplay mechanics and levels.
+
+I led the three-member development team, integrating game systems and managing overall feature implementation. The project received the highest score among 30 course teams.
+
+[Explore Repository](https://github.com/WilsonAnthonyT/NTHU_I2P_II-Final_Project)
+
+### ⚙️ 8051 Multithreading & Synchronization
+
+**C · SDCC · Embedded Systems · Operating Systems**
+
+An operating-systems project exploring lightweight threads, context switching, timer-driven scheduling, semaphores, and producer-consumer synchronization in a constrained 8051 environment.
+
+The portfolio includes an educational thread-scheduling visualization inspired by this work.
+
+### 💰 SaveWiser — Budgeting & Savings Application
+
+**Flutter · Dart · Android**
+
+A mobile application developed from client requirements, focusing on budgeting, savings management, financial constraint logic, and mobile user experience.
+
+[Explore Repository](https://github.com/WilsonAnthonyT/SaveWiserApp)
+
+---
+
+## Portfolio Features
+
+- **Interactive developer terminal** — Explore portfolio information through predefined commands.
+- **Pointer-reactive project cards** — Subtle motion, depth effects, and interactive highlights.
+- **Project case studies** — Dedicated pages describing technical approaches and engineering decisions.
+- **Interactive engineering demonstrations** — Educational simulations related to AI workflow reliability, thread scheduling, and game mechanics.
+- **Responsive layouts** — Designed for desktop, tablet, and mobile devices.
+- **Light and dark themes** — Theme switching with persistent preferences.
+- **Animated navigation** — Smooth scrolling, section transitions, and interactive elements.
+- **Accessibility considerations** — Keyboard navigation and reduced-motion support.
+
+## Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Framework | Next.js, React |
+| Language | TypeScript |
+| Styling | CSS, Tailwind CSS |
+| Version Control | Git, GitHub |
+| Deployment | Cloudflare Pages |
+| Architecture | Static generation, reusable components |
+
+The portfolio uses a static-first architecture, with interactive features running in the browser.
+
+No database or live AI service is required to operate the website.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version compatible with the project dependencies)
+- npm
+
+### Local Development
+
+Clone the repository:
+
+```bash
+git clone https://github.com/WilsonAnthonyT/wilson-portfolio.git
+cd wilson-portfolio
+```
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-Open http://localhost:3000. To verify the actual production code:
+Open [http://localhost:3000](http://localhost:3000).
+
+### Production Build
 
 ```bash
-npm run typecheck
 npm run build
 ```
 
-With `output: 'export'`, the build produces the `out/` directory.
+The project uses Next.js static export, generating production files in the `out/` directory.
 
-**Verification limitation for this delivery:** npm registry access is unavailable in the authoring environment. Consequently the dependencies could not be installed and the Next.js build/type check has **not** been run successfully. All 8 authored TypeScript/TSX files passed a syntax-transpilation check using the globally installed TypeScript compiler. The **separate standalone preview** was rendered with Chromium and its interactions tested.
+The production build has been successfully completed locally with Next.js 16.4.1.
 
-## Deploy on Cloudflare Pages
+## Project Structure
 
-1. Push this source repository to GitHub.
-2. Create a Cloudflare Pages project and connect the repository.
-3. Framework preset: Next.js (Static HTML Export) or none.
-4. Build command: `npm run build`.
-5. Output directory: `out`.
-6. Confirm deployment and the real domain's links, metadata, mobile rendering, and accessibility.
+```text
+src/
+├── app/                  # Routes and page layouts
+├── components/           # Reusable UI and interactive components
+└── content/              # Project information
 
-No database or public AI API key is required. Terminal and project labs are local UI interactions, not backend services.
+public/
+├── assets/               # Images and visual assets
+└── *.pdf                 # Public resume
 
-## Architecture
-
-- `src/content/projects.ts` — typed project content and facts. Update this file when correcting descriptions or adding case studies.
-- `src/components/Portfolio.tsx` — homepage sections, archive, and footer.
-- `src/components/Interactive.tsx` — terminal, pointer-reactive cards, focus tabs, simulations, theme, galleries.
-- `src/components/CaseStudy.tsx` — reusable project detail layout.
-- `src/app/globals.css` — custom responsive design system; Tailwind included for future expansion.
-- `src/app/projects/[slug]/page.tsx` — statically generated project routes.
-
-## Projects and authenticity
-
-Project descriptions draw from the provided résumé and the user's supplied GitHub profile. The original supplied résumé describes a top-scoring C++ project (among 30 teams), 8051 multithreading, SaveWiser, and Goal Digger work.
-
-**Artwork disclaimer:** Each project visual is an original explanatory **concept illustration**, not a real application screenshot or proof of project performance. Replace these with your own screenshots before public launch, then update the alt text and gallery captions.
-
-**Contribution disclaimer:** Goal Digger is a team project. The résumé supports general contributions to architecture, UI/UX, integration, debugging, and demo preparation, not ownership of individual modules. Confirm module-level responsibility before expanding the case study.
-
-**Technical simulations:** The Goal Digger fallback explorer visualizes repository-described paths; it is not a live call to Firebase or Gemini. The 8051 thread simulation is not an instruction-accurate emulator. The RPG mini interaction is not the original game's code or assets.
-
-**Pending items:** Actual screenshots, exact team contributions, 8051 repository link if available, and a final review of portfolio public contact information.
-
-## Known gaps to close before publication
-
-- Run `npm install`, `npm run typecheck`, and `npm run build` on a connected machine.
-- Replace project concept art with actual screenshots and refine the deeper writeups from source code and your individual work.
-- Conduct Lighthouse, keyboard-only and screen-reader checks on a **deployed** Next.js build.
-- Verify every link after deployment.
-
-## Static standalone preview browser tips
-
-Some browsers restrict `file://` access or clipboard permissions. If an interaction fails in a file tab, run a local HTTP server:
-
-```bash
-cd preview
-python -m http.server 8080
+preview/                   # Standalone development preview
+tools/                     # Supporting development utilities
 ```
 
-Then open http://localhost:8080.
+Project content is organized separately from the interface components, making it easier to update descriptions, add case studies, and expand the portfolio.
+
+## Interactive Demonstrations
+
+Some interactive experiences are simplified educational demonstrations designed to explain the underlying engineering concepts.
+
+- The Goal Digger workflow explorer illustrates AI planning and fallback scenarios; it does not call the production AI backend.
+- The 8051 scheduler visualization demonstrates threading concepts and is not an instruction-accurate hardware emulator.
+- The RPG interaction is a simplified demonstration rather than the original game executable.
+
+Project imagery may include illustrative graphics where original screenshots have not yet been integrated. These should not be interpreted as verified application outputs.
+
+## Deployment
+
+The website is deployed using **Cloudflare Pages**, connected to this GitHub repository.
+
+Updates pushed to the configured production branch trigger a new deployment. The public website is updated after the Cloudflare build succeeds.
+
+**Live Website:** https://wilson-portfolio-bvw.pages.dev/
+
+## Contact
+
+**Wilson Antony Thang**
+
+- **Email:** [antonywilson229@gmail.com](mailto:antonywilson229@gmail.com)
+- **GitHub:** [WilsonAnthonyT](https://github.com/WilsonAnthonyT)
+- **LinkedIn:** [Wilson Antony Thang](https://www.linkedin.com/in/wilson-thang-222075345)
+
+---
+
+*Always building. Always learning.*
+
+**Wilson Antony Thang · National Tsing Hua University**
