@@ -1,0 +1,1 @@
+import type {Metadata} from 'next';import {ProjectsIndex} from '@/components/Portfolio';export const metadata:Metadata={title:'Projects',description:'Selected AI, mobile, C++ and embedded projects by Wilson Antony Thang.'};export default function Page(){return <ProjectsIndex/>}
